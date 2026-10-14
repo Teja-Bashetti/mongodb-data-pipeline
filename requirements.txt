@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 
 pymongo
 python-dotenv
 mysql-connector-python
+=======
+pymongo
+psycopg2-binary
+python-dotenv
+>>>>>>> origin/main
 pytest
