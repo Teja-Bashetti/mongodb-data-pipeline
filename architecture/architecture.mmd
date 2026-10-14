@@ -1,0 +1,28 @@
+
+flowchart TD
+    A["MongoDB Source"] --> B["Orders Collection"]
+    A --> C["Bills Collection"]
+    A --> D["Users Collection"]
+
+    B --> E["Python Extraction Layer"]
+    C --> E
+    D --> E
+
+    E --> F["Amazon S3 - Raw JSON Layer"]
+    F --> G["Zephyrus ELT - Hypothetical Framework"]
+
+    G --> H["Schema Validation"]
+    H --> I["Normalization and Deduplication"]
+    I --> J["Data Quality Checks"]
+
+    J --> K["PostgreSQL Relational Tables"]
+    J --> L["Amazon Redshift Data Warehouse"]
+
+    L --> M["Star Schema"]
+    L --> N["Snowflake Schema"]
+
+    G --> O["Batch Audit Logs"]
+    J --> P["Failed Record Quarantine"]
+
+    O --> Q["Monitoring and Alerts"]
+    P --> Q
